@@ -31,7 +31,7 @@ return [
             'og' => 'Použít Open Graph (og)',
             'og_comment' => 'Aktivovat Open Graph (og) tagy',
             'sitename' => 'Název stránek pro Open Graph',
-            'sitename_comment' => 'Název stránek. Ne URL. Například "SEO Extension" ne "seoextension.com".',
+            'sitename_comment' => 'Název stránek. Ne URL. Například "SEO Extension" ne "seo.com".',
             'fb' => 'ID Facebook Aplikace',
             'fb_comment' => 'Unikátní ID podle kterých dokáže Facebook identifikovat vaše stránky.',
         ],

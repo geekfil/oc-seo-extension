@@ -1,10 +1,10 @@
-<?php namespace AnandPatel\SeoExtension\Components;
+<?php namespace Geekfil\Seo\Components;
 
 use Cms\Classes\ComponentBase;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
 use Request;
-use AnandPatel\SeoExtension\models\Settings;
+use Geekfil\Seo\models\Settings;
 use URL;
 
 class CmsPage extends ComponentBase
@@ -31,8 +31,8 @@ class CmsPage extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'anandpatel.seoextension::lang.component.cms.name',
-            'description' => 'anandpatel.seoextension::lang.component.cms.description'
+            'name'        => 'geekfil.seo::lang.component.cms.name',
+            'description' => 'geekfil.seo::lang.component.cms.description'
         ];
     }
 

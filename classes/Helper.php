@@ -1,6 +1,6 @@
-<?php namespace AnandPatel\SeoExtension\classes;
+<?php namespace Geekfil\Seo\classes;
 
-use AnandPatel\SeoExtension\Models\Settings;
+use Geekfil\Seo\Models\Settings;
 use Request;
 class Helper {
 

@@ -1,4 +1,4 @@
-<?php namespace AnandPatel\SeoExtension\Components;
+<?php namespace Geekfil\Seo\Components;
 
 use Cms\Classes\ComponentBase;
 use Event;
@@ -18,8 +18,8 @@ class BlogPost extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'anandpatel.seoextension::lang.component.blog.name',
-            'description' => 'anandpatel.seoextension::lang.component.blog.description'
+            'name'        => 'geekfil.seo::lang.component.blog.name',
+            'description' => 'geekfil.seo::lang.component.blog.description'
         ];
     }
 

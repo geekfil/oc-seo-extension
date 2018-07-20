@@ -31,7 +31,7 @@ If you like this plugin, give this plugin a Like or Make donation with PayPal.
 #Documentation
 
 #####**Installation**
-To install this plugin you have to click on __add to project__ or need to type __AnandPatel.SeoExtension__ in Backend *System > updates > intall plugin*
+To install this plugin you have to click on __add to project__ or need to type __Geekfil.Seo__ in Backend *System > updates > intall plugin*
 
 
 The plugin currently includes three components:

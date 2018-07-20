@@ -1,6 +1,6 @@
-<?php namespace anandpatel\seoextension;
+<?php namespace geekfil\seo;
 
-use AnandPatel\SeoExtension\classes\Helper;
+use Geekfil\Seo\classes\Helper;
 use Cms\Classes\Page;
 use Cms\Classes\Theme;
 use System\Classes\PluginBase;
@@ -8,7 +8,7 @@ use System\Classes\PluginManager;
 use System\Classes\SettingsManager;
 
 /**
- * SeoExtension Plugin Information File
+ * Seo Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -24,9 +24,9 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'anandpatel.seoextension::lang.plugin.name',
-            'description' => 'anandpatel.seoextension::lang.plugin.description',
-            'author'      => 'AnandPatel',
+            'name'        => 'geekfil.seo::lang.plugin.name',
+            'description' => 'geekfil.seo::lang.plugin.description',
+            'author'      => 'Geekfil',
             'icon'        => 'icon-search'
         ];
     }
@@ -35,9 +35,9 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'AnandPatel\SeoExtension\Components\BlogPost' => 'SeoBlogPost',
-            'AnandPatel\SeoExtension\Components\StaticPage' => 'SeoStaticPage',
-            'AnandPatel\SeoExtension\Components\CmsPage' => 'SeoCmsPage',
+            'Geekfil\Seo\Components\BlogPost' => 'SeoBlogPost',
+            'Geekfil\Seo\Components\StaticPage' => 'SeoStaticPage',
+            'Geekfil\Seo\Components\CmsPage' => 'SeoCmsPage',
         ];
     }
 
@@ -45,12 +45,12 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label'       => 'anandpatel.seoextension::lang.settings.label',
-                'description' => 'anandpatel.seoextension::lang.settings.description',
+                'label'       => 'geekfil.seo::lang.settings.label',
+                'description' => 'geekfil.seo::lang.settings.description',
                 'icon'        => 'icon-search',
                 'category'    =>  SettingsManager::CATEGORY_MYSETTINGS,
-                'permissions' => ['anandpatel.seoextension.settings.edit'],
-                'class'       => 'AnandPatel\SeoExtension\Models\Settings',
+                'permissions' => ['geekfil.seo.settings.edit'],
+                'class'       => 'Geekfil\Seo\Models\Settings',
                 'order'       => 100
             ]
         ];
@@ -71,9 +71,9 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'anandpatel.seoextension.settings.edit' => [
-                'label' => 'anandpatel.seoextension::lang.settings.permissions.settings_edit',
-                'tab' => 'anandpatel.seoextension::lang.plugin.name'
+            'geekfil.seo.settings.edit' => [
+                'label' => 'geekfil.seo::lang.settings.permissions.settings_edit',
+                'tab' => 'geekfil.seo::lang.plugin.name'
             ]
         ];
     }
@@ -115,37 +115,37 @@ class Plugin extends PluginBase
             if (PluginManager::instance()->hasPlugin('RainLab.Pages') && $widget->model instanceof \RainLab\Pages\Classes\Page) {
                 $widget->addFields([
                         'viewBag[seo_title]' => [
-                        'label'   => 'anandpatel.seoextension::lang.editor.meta_title',
+                        'label'   => 'geekfil.seo::lang.editor.meta_title',
                         'type'    => 'text',
                         'tab'     => 'cms::lang.editor.meta'
                         ],
                         'viewBag[seo_description]' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.meta_description',
+                            'label'   => 'geekfil.seo::lang.editor.meta_description',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'cms::lang.editor.meta'
                         ],
                         'viewBag[seo_keywords]' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.meta_keywords',
+                            'label'   => 'geekfil.seo::lang.editor.meta_keywords',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'cms::lang.editor.meta'
                         ],
                         'viewBag[canonical_url]' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.canonical_url',
+                            'label'   => 'geekfil.seo::lang.editor.canonical_url',
                             'type'    => 'text',
                             'tab'     => 'cms::lang.editor.meta',
                             'span'    => 'left'
                         ],
                         'viewBag[redirect_url]' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.redirect_url',
+                            'label'   => 'geekfil.seo::lang.editor.redirect_url',
                             'type'    => 'text',
                             'tab'     => 'cms::lang.editor.meta',
                             'span'    => 'right'
 
                         ],
                         'viewBag[robot_index]' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.robot_index',
+                            'label'   => 'geekfil.seo::lang.editor.robot_index',
                             'type'    => 'dropdown',
                             'tab'     => 'cms::lang.editor.meta',
                             'options' => $this->getIndexOptions(),
@@ -153,7 +153,7 @@ class Plugin extends PluginBase
                             'span'    => 'left'
                         ],
                         'viewBag[robot_follow]' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.robot_follow',
+                            'label'   => 'geekfil.seo::lang.editor.robot_follow',
                             'type'    => 'dropdown',
                             'tab'     => 'cms::lang.editor.meta',
                             'options' => $this->getFollowOptions(),
@@ -167,37 +167,37 @@ class Plugin extends PluginBase
             if (PluginManager::instance()->hasPlugin('RainLab.Blog') && $widget->model instanceof \RainLab\Blog\Models\Post) {
                 $widget->addFields([
                         'seo_title' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.meta_title',
+                            'label'   => 'geekfil.seo::lang.editor.meta_title',
                             'type'    => 'text',
                             'tab'     => 'SEO'
                         ],
                         'seo_description' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.meta_description',
+                            'label'   => 'geekfil.seo::lang.editor.meta_description',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'SEO'
                         ],
                         'seo_keywords' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.meta_keywords',
+                            'label'   => 'geekfil.seo::lang.editor.meta_keywords',
                             'type'    => 'textarea',
                             'size'    => 'tiny',
                             'tab'     => 'SEO'
                         ],
                         'canonical_url' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.canonical_url',
+                            'label'   => 'geekfil.seo::lang.editor.canonical_url',
                             'type'    => 'text',
                             'tab'     => 'SEO',
                             'span'    => 'left'
                         ],
                         'redirect_url' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.redirect_url',
+                            'label'   => 'geekfil.seo::lang.editor.redirect_url',
                             'type'    => 'text',
                             'tab'     => 'SEO',
                             'span'    => 'right'
 
                         ],
                         'robot_index' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.robot_index',
+                            'label'   => 'geekfil.seo::lang.editor.robot_index',
                             'type'    => 'dropdown',
                             'tab'     => 'SEO',
                             'options' => $this->getIndexOptions(),
@@ -205,7 +205,7 @@ class Plugin extends PluginBase
                             'span'    => 'left'
                         ],
                         'robot_follow' => [
-                            'label'   => 'anandpatel.seoextension::lang.editor.robot_follow',
+                            'label'   => 'geekfil.seo::lang.editor.robot_follow',
                             'type'    => 'dropdown',
                             'tab'     => 'SEO',
                             'options' => $this->getFollowOptions(),
@@ -227,27 +227,27 @@ class Plugin extends PluginBase
             $widget->addFields(
                 [
                     'settings[seo_keywords]' => [
-                        'label'   => 'anandpatel.seoextension::lang.editor.meta_keywords',
+                        'label'   => 'geekfil.seo::lang.editor.meta_keywords',
                         'type'    => 'textarea',
                         'tab'     => 'cms::lang.editor.meta',
                         'size'    => 'tiny',
                         'placeholder' => "hello"
                     ],
                     'settings[canonical_url]' => [
-                        'label'   => 'anandpatel.seoextension::lang.editor.canonical_url',
+                        'label'   => 'geekfil.seo::lang.editor.canonical_url',
                         'type'    => 'text',
                         'tab'     => 'cms::lang.editor.meta',
                         'span'    => 'left'
                     ],
                     'settings[redirect_url]' => [
-                        'label'   => 'anandpatel.seoextension::lang.editor.redirect_url',
+                        'label'   => 'geekfil.seo::lang.editor.redirect_url',
                         'type'    => 'text',
                         'tab'     => 'cms::lang.editor.meta',
                         'span'    => 'right'
 
                     ],
                     'settings[robot_index]' => [
-                        'label'   => 'anandpatel.seoextension::lang.editor.robot_index',
+                        'label'   => 'geekfil.seo::lang.editor.robot_index',
                         'type'    => 'dropdown',
                         'tab'     => 'cms::lang.editor.meta',
                         'options' => $this->getIndexOptions(),
@@ -255,7 +255,7 @@ class Plugin extends PluginBase
                         'span'    => 'left'
                     ],
                     'settings[robot_follow]' => [
-                        'label'   => 'anandpatel.seoextension::lang.editor.robot_follow',
+                        'label'   => 'geekfil.seo::lang.editor.robot_follow',
                         'type'    => 'dropdown',
                         'tab'     => 'cms::lang.editor.meta',
                         'options' => $this->getFollowOptions(),

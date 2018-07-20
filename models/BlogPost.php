@@ -1,4 +1,4 @@
-<?php namespace AnandPatel\SeoExtension\Models;
+<?php namespace Geekfil\Seo\Models;
 
 use Model;
 
@@ -11,7 +11,7 @@ class BlogPost extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'anandpatel_seoextension_blog_posts';
+    public $table = 'geekfil_seo_blog_posts';
 
     /**
      * @var array Guarded fields

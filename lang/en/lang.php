@@ -41,7 +41,7 @@
             'og' => 'Use Open Graph(og)',
             'og_comment' => 'Enable Open Graph(og) Tags',
             'sitename' => 'Site name for Open Graph',
-            'sitename_comment' => 'The name of your website. Not the URL, but the name. (i.e. "SEO Extension" not "seoextension.com".)',
+            'sitename_comment' => 'The name of your website. Not the URL, but the name. (i.e. "SEO Extension" not "seo.com".)',
             'fb' => 'Facebook App Id',
             'fb_comment' => 'The unique ID that lets Facebook know the identity of your site.',
         ],
